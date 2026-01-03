@@ -19,22 +19,22 @@ You should receive the source code with this filename:
 
 ###PREPARATION: Extract Source and Install Tools1. **Install rpmdev tools:**
 
-sudo dnf install rpmdevtools
+```sudo dnf install rpmdevtools```
 
 
 
 
 2. **Prepare the RPM build environment:** (This creates `~/rpmbuild/SPECS`, `~/rpmbuild/SOURCES`, etc.)
    
-rpmdev-setuptree
+```rpmdev-setuptree```
 
 
 
 
 4. **Extract the contents of the `.src.rpm`:** (Assuming the `.src.rpm` is in `~/Downloads`)
 
-cd ~/Downloads
-rpm -i epson-inkjet-printer-201207w-1.0.1-1.src.rpm
+```cd ~/Downloads```
+```rpm -i epson-inkjet-printer-201207w-1.0.1-1.src.rpm```
 
 
 
@@ -43,7 +43,7 @@ rpm -i epson-inkjet-printer-201207w-1.0.1-1.src.rpm
 
 ###STEP 1: Modify the SPEC File1. **Open the spec file for editing:**
 
-nano ~/rpmbuild/SPECS/epson-inkjet-printer-201207w.spec
+```nano ~/rpmbuild/SPECS/epson-inkjet-printer-201207w.spec```
 
 
 
@@ -54,14 +54,14 @@ nano ~/rpmbuild/SPECS/epson-inkjet-printer-201207w.spec
 ###STEP 2: Install Build DependenciesYou need development tools and libraries for the binary to compile correctly:
 
 
-sudo dnf install @development-tools cups-devel ghostscript libtool libjpeg-devel libtiff-devel
+```sudo dnf install @development-tools cups-devel ghostscript libtool libjpeg-devel libtiff-devel```
 
 
 
 ###STEP 3: Build the Final RPM PackageExecute the compilation command:
 
 
-rpmbuild -ba ~/rpmbuild/SPECS/epson-inkjet-printer-201207w.spec
+```rpmbuild -ba ~/rpmbuild/SPECS/epson-inkjet-printer-201207w.spec```
 
 
 
@@ -72,14 +72,14 @@ The finished installation package (`.rpm`) will be placed in the RPMS subdirecto
 ###STEP 4: Install the Driver and Restart CUPSInstall the final driver package:
 
 
-sudo dnf install ~/rpmbuild/RPMS/x86_64/epson-inkjet-printer-201207w-1.0.1-1.rpm
+```sudo dnf install ~/rpmbuild/RPMS/x86_64/epson-inkjet-printer-201207w-1.0.1-1.rpm```
 
 
 
 Restart the CUPS Service:
 
 
-sudo systemctl restart cups
+```sudo systemctl restart cups```
 
 
 
