@@ -1,6 +1,12 @@
 # epson-fixed-drivers
 Fixed PPD drivers for L110-L210-L300-L350-L355-L550-L555 series. Optimized for Fedora, Bazzite, and Atomic Linux systems.
 
+I've fixed that outdated driver provided by the manufacturer for their older printers. I'm not a programmer; I did it entirely with the help of AI, but it works perfectly. Tested on Fedora KDE and Bazzite.
+
+IMPORTANT: The attached files are the modified versions I created if you wish to install them directly, or you can click on the .spec file to view the code. Installation on atomic versions like Bazzite or Fedora Kinoite requires different instructions:
+
+```rpm-ostree install epson-inkjet-printer-201207w-1.0.1-1.x86_64.rpm```
+
 Download the original drivers the source code:
 L110/L210/L300/L350/L355/L550/L555
 
